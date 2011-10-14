@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Javascript Web Applications - Chapter 2</title>
+  <script src="./javascripts/jquery-1.6.4.js"></script> 
+</head>
+<body>
+  <form action="./submitted.html" method="post" accept-charset="utf-8">
+    <input type="button" id="button1" value="button1">
+    <input type="button" id="button2" value="button2">
+    <input type="button" id="button3" value="button3">
+  </form>
+  <ul id="list">
+    <li id="item1">Item 1</li>
+    <li id="item2">Item 2</li>
+    <li id="item3">Item 3</li>
+  </ul>
+  <script type="text/javascript"> 
+    // beyond events that are native to the browser, you can trigger and bind them to your own custom events
+    // jQuery lets you fire custom events using the trigger() function. You can namespace event names, 
+    // but namespaces are separated by full stops and reversed.  
+    jQuery(function($) {
+      // Bind custom events
+      $("#item1").bind("item1.clicked", function() { console.log("Called custom event 'item1.clicked' binded to: " + this.id) } );
+      $("#item2").bind("item2.clicked", function() { console.log("Called custom event 'item2.clicked' binded to: " + this.id) } );
+      $("#item3").bind("item3.clicked", function() { console.log("Called custom event 'item3.clicked' binded to: " + this.id) } );
+      
+      // triggering the custom events on buttons clicks
+      $("#button1").click(function() { $("#item1").trigger("item1.clicked"); } );
+      $("#button2").click(function() { $("#item2").trigger("item2.clicked"); } );
+      $("#button3").click(function() { $("#item3").trigger("item3.clicked"); } );
+    });
+  </script>
+</body>

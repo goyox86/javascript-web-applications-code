@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Javascript Web Applications - Chapter 2</title>
+  <script src="./javascripts/jquery-1.6.4.js"></script> 
+</head>
+<body>
+  <form action="./submitted.html" method="post" accept-charset="utf-8">
+    <p><input type="submit" id="createButton" value="create"></p>
+  </form>
+  <script type="text/javascript">
+    // if the listener function is anonymous and there’s no reference to it, it can’t be removed without destroying the element    
+    //saving a reference to the listener function
+    var listener = function() { console.log("Clicked!"); }
+    var button = document.getElementById("createButton");
+    button.addEventListener("click", listener, false);
+    //removing the listener function from the button element using removeEventListener
+    button.removeEventListener("click", listener, false);
+  </script>
+</body>

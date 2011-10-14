@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Javascript Web Applications - Chapter 2</title>
+  <script src="./javascripts/jquery-1.6.4.js"></script> 
+</head>
+<body>
+  <ul id="list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+  <script type="text/javascript"> 
+    // the 'dom_content_loaded' is not supported consistently across browsers so jQuery abstracts it in the 'jQuery.ready' function or it's alias jQuery(); 
+    jQuery(function($) {
+      jQuery("ul").delegate("li","click",function() {
+        console.log("A list item was clicked: " + this.innerHTML);
+      });
+    });
+  </script>
+</body>
