@@ -1,1 +1,11 @@
-Code I extracted from the "JavaScript Web Applications" book by Alex MacCaw
+Code I extracted from the "JavaScript Web Applications" book by Alex MacCaw.
+
+Note: This at least by now node.js dependent.
+
+Please use node.js for running the pure JavaScript code files, for some of them you will need the 'jquery' node package. You can install it using 'npm'.
+
+'npm' is the node.js package manager visit http://npmjs.org/ for installation instructions.
+
+After installed npm you can easily run:
+
+$ npm install jquery
